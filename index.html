@@ -28,28 +28,26 @@
     ul{margin:10px 0 0 18px}li{margin:6px 0}
    /* Gallery: 1 col mobile, 2 cols tablet, 3 cols desktop */
 /* PROFESSIONAL PHOTOS GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-  justify-items: center;
-  align-items: start;
-  margin-top: 12px;
+/* --- Photos: force 3 equal tiles in one row --- */
+#photos .gallery{
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important; /* always 3 columns */
+  gap: 18px !important;
+  align-items: stretch !important;
 }
 
-.gallery img {
-  width: 100%;
-  max-width: 350px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease-in-out;
+/* Make every image the same size */
+#photos .gallery img{
+  width: 100% !important;
+  aspect-ratio: 3 / 2 !important;   /* uniform shape; use 1/1 for square or 4/3 if you prefer */
+  object-fit: cover !important;      /* crop to fill the tile */
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
 }
 
-.gallery img:hover {
-  transform: scale(1.03);
-}
+/* (Optional) subtle hover */
+#photos .gallery img:hover{ transform: scale(1.03); }
+
 
 
     .download{display:inline-flex;align-items:center;gap:8px;background:var(--ucf-gold);color:#1b1b1b;font-weight:700;border-radius:10px;padding:10px 14px;border:1px solid rgba(0,0,0,.1)}
