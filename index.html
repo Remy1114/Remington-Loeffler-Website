@@ -26,8 +26,19 @@
     .card{background:var(--card);border:1px solid var(--ring);border-radius:14px;padding:20px;box-shadow:0 6px 18px rgba(0,0,0,.04)}.card h3{margin:0 0 10px 0;font-size:20px}
     h2{font-size:26px;margin:0 0 12px 0;border-left:6px solid var(--ucf-gold);padding-left:10px}
     ul{margin:10px 0 0 18px}li{margin:6px 0}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-    .gallery img{width:100%;height:260px;object-fit:cover;border-radius:12px;border:1px solid var(--ring);box-shadow:0 8px 20px rgba(0,0,0,.06)}
+   /* Gallery: 1 col mobile, 2 cols tablet, 3 cols desktop */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(220px, 1fr));
+  gap: 14px;
+}
+@media (min-width: 640px) {
+  .gallery { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+}
+@media (min-width: 980px) {
+  .gallery { grid-template-columns: repeat(3, minmax(220px, 1fr)); }
+}
+
     .download{display:inline-flex;align-items:center;gap:8px;background:var(--ucf-gold);color:#1b1b1b;font-weight:700;border-radius:10px;padding:10px 14px;border:1px solid rgba(0,0,0,.1)}
     .muted{color:var(--slate)}.kicker{font-weight:700;color:var(--slate);text-transform:uppercase;font-size:12px;letter-spacing:.08em}
   </style>
@@ -155,14 +166,14 @@
         </ul>
       </div>
     </section>
-   <section id="photos" class="card"><h2>Professional Photos</h2>
+ <section id="photos" class="card"><h2>Professional Photos</h2>
   <div class="gallery">
-    <img src="./IMG_8998.jpg" alt="Professional headshot portrait" />
     <img src="./IMG_8997.jpg" alt="Team photo at TJEEI event" />
-    <img src="./IMG_9002.jpg" alt="Conference presentation group" />
     <img src="./IMG_9001.jpg" alt="Poster presentation at CEC conference" />
+    <img src="./IMG_9002.jpg" alt="Conference presentation group" />
   </div>
 </section>
+
 
     <section class="card" style="text-align:center"><p class="muted">© <span id="year"></span> Remington Loeffler · University of Central Florida</p></section>
   </main>
